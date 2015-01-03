@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# find the full path of tshark
+TSHARK=`which tshark`
 CLIENT_STATION=$1
 
 # below captures probe requests sent by $CLIENT_STATION
