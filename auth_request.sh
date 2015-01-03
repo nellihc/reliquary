@@ -5,4 +5,4 @@ CLIENT_STATION=$1
 
 
 # below captures authentication requests sent by $CLIENT_STATION
-$TSHARK -i mon0 -Y "wlan.sa == $CLIENT_STATION && wlan.fc.subtype == 11"
+$TSHARK -i mon0 -Y "wlan.sa == $CLIENT_STATION && wlan.fc.type_subtype == 11"
