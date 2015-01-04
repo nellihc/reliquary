@@ -6,7 +6,7 @@ CAPTURE_FILE_DIRECTORY=output
 CAPTURE_FILE_NAME=traffic.csv
 
 SRC_MAC=$1
-CAPTURE_CHAN=$2
+#CAPTURE_CHAN=$2
 
 # create our file if it does not exist
 if [ ! -e "./$CAPTURE_FILE_DIRECTORY/$CAPTURE_FILE_NAME" ] ; then
