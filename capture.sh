@@ -2,7 +2,16 @@
 
 TSHARK=`which tshark`
 AIRMON_NG=`which airmon-ng`
+CAPTURE_FILE_DIRECTORY=output
 CAPTURE_FILE_NAME=traffic.csv
+
+# create our file if it does not exist
+if [ ! -e "$CAPTURE_FILE_DIRECTORY/$CAPTURE_FILE_NAME" ] ; then
+    touch "$CAPTURE_FILE_DIRECTORY/$CAPTURE_FILE_NAME"
+fi
+
+# modify permissions
+chmod 777 $CAPTURE_FILE_DIRECTORY/$CAPTURE_FILE_NAME
 
 # create mon0 interface to capture on
 $AIRMON_NG start wlan1
