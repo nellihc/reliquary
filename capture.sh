@@ -33,4 +33,4 @@ tshark -i mon0 -Y "wlan.fc.type_subtype==4 || wlan.fc.type_subtype==5 || wlan.fc
                           -E header=y                    \
                           -E quote=d                     \
                           -E occurrence=f                \
-                          >> $CAPTURE_FILE_NAME
+                          >> ./$CAPTURE_FILE_DIRECTORY/$CAPTURE_FILE_NAME
