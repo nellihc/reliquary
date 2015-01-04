@@ -1,9 +1,12 @@
 #!/bin/bash
 
 TSHARK=`which tshark`
+AIRMON_NG=`which airmon-ng`
 CLIENT_STATION=$1
 CAPTURE_FILE_NAME=traffic.csv
 
+# create mon0 interface
+$AIRMON_NG start wlan1
 
 # this captures 802.11 probe requests, probe responses
 tshark -i mon0 -Y "wlan.fc.type_subtype==4 || wlan.fc.type_subtype==5" \
