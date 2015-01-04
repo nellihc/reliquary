@@ -20,9 +20,7 @@ $AIRMON_NG start wlan1
 # authentication requests/responses(11),
 # association requests(0), assocation responses(1), 
 # disassociation updates (10)
-tshark -i mon0 -Y "wlan.fc.type_subtype==4  || wlan.fc.type_subtype==5 || \  
-                   wlan.fc.type_subtype==11 || wlan.fc.type_subtype==0 || \
-                   wlan.fc.type_subtype==1  || wlan.fc.type_subtype==10   \
+tshark -i mon0 -Y "wlan.fc.type_subtype==4 || wlan.fc.type_subtype==5 || wan.fc.type_subtype==11 || wlan.fc.type_subtype==0 || wlan.fc.type_subtype==1 || wlan.fc.type_subtype==10" \
                           -T fields -e frame.time        \
                           -e wlan.fc.type_subtype        \
                           -e wlan.sa                     \
@@ -34,4 +32,4 @@ tshark -i mon0 -Y "wlan.fc.type_subtype==4  || wlan.fc.type_subtype==5 || \
                           -E header=y                    \
                           -E quote=d                     \
                           -E occurrence=f                \
-                           >> $CAPTURE_FILE_NAME
+                          >> $CAPTURE_FILE_NAME
